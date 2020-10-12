@@ -100,3 +100,46 @@ int Vecteur::operator*(Vecteur &v) const {
     }
     return res;
 }
+
+Vecteur::Iterateur::Iterateur() {}
+
+Vecteur::Iterateur::~Iterateur() {}
+
+Vecteur * Vecteur::Iterateur::getVecteur() {
+    return _vecteur;
+}
+
+void Vecteur::Iterateur::setVecteur(Vecteur& vecteur) {
+    _vecteur = &vecteur;
+}
+
+int Vecteur::Iterateur::getIndex() {
+    return _index;
+}
+
+void Vecteur::Iterateur::setIndex(int index) {
+    _index = index;
+}
+
+int Vecteur::Iterateur::operator*() {
+    return (*_vecteur)[getIndex()];
+}
+
+Vecteur::Iterateur& Vecteur::Iterateur::operator++() {
+    this->setIndex(this->getIndex() + 1);
+    return *this;
+}
+
+Vecteur::Iterateur Vecteur::begin() {
+    Vecteur::Iterateur it;
+    it.setVecteur(*this);
+    it.setIndex(0);
+    return it;
+}
+
+Vecteur::Iterateur Vecteur::end() {
+    Vecteur::Iterateur it;
+    it.setVecteur(*this);
+    it.setIndex(this->getTaille());
+    return it;
+}

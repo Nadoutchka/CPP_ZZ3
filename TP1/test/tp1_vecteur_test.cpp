@@ -155,7 +155,7 @@ TEST_CASE("Vecteur::operator*") {
     REQUIRE(v1*v2 == 5);
 }
 
-/*TEST_CASE("Vector::Iterateur") {
+TEST_CASE("Vector::Iterateur") {
     Vecteur v = Vecteur();
 
     v.ajouter(0);
@@ -171,4 +171,8 @@ TEST_CASE("Vecteur::operator*") {
         REQUIRE(*it == i);
         ++i;
     }
-}*/
+}
+
+bool Vecteur::Iterateur::operator!=(Vecteur::Iterateur it) {
+    return (this->getVecteur() != it.getVecteur()) || (this->getIndex() != it.getIndex());
+}

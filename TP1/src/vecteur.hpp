@@ -24,6 +24,25 @@ class Vecteur {
         void supprimer(int);
         void operator+(int);
         int operator*(Vecteur&) const;
+        class Iterateur {
+            private :
+                Vecteur * _vecteur;
+                int _index;
+            public :
+                Iterateur();
+                ~Iterateur();
+                Vecteur * getVecteur();
+                void setVecteur(Vecteur&);
+                int getIndex();
+                void setIndex(int);
+                int operator*();
+                Iterateur& operator++();
+                //Iterateur operator++(int);
+                bool operator!=(Iterateur);
+
+        };
+        Vecteur::Iterateur begin();
+        Vecteur::Iterateur end();
 };
 
 
