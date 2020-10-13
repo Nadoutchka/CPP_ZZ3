@@ -7,16 +7,19 @@
 
 template <typename TypePoint> class Nuage {
     private:
-        std::vector<const TypePoint*> Vpoint;
+        std::vector<TypePoint> Vpoint;
     public:
-        typedef typename std::vector<const TypePoint*>::const_iterator const_iterator;
+        typedef typename std::vector<TypePoint>::const_iterator const_iterator;
 
         Nuage();
         ~Nuage();
-        void ajouter(const TypePoint&);
+        void ajouter(TypePoint);
         int size() const ;
         const_iterator begin() const;
         const_iterator end() const;
 };
+
+template <typename TypePoint>
+TypePoint barycentre_v1(Nuage<TypePoint>&);
 
 #endif

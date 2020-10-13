@@ -42,9 +42,3 @@ void Polaire::convertir(Polaire &p) const {
     p.setDistance(this->getDistance());
     p.setAngle(this->getAngle());
 }
-
-Polaire& Polaire::operator=(const Polaire *p) {
-    this->setAngle(p->getAngle());
-    this->setDistance(p->getDistance());
-    return *this;
-}

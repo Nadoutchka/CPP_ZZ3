@@ -20,7 +20,6 @@ class Polaire : public Point {
         void afficher(std::ostream &) const;
         void convertir(Cartesien &) const;
         void convertir(Polaire &) const;
-        Polaire& operator=(const Polaire*);
         
 };
 

@@ -54,7 +54,7 @@ TEST_CASE ( "TP2_Nuage::Iterateurs" ) {
 }
 
 //------------------------------------------------------------------------------------------------ 3
-/*TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V1" ) {
+TEST_CASE ( "TP2_Nuage::BarycentreCartesien_V1" ) {
  Nuage<Cartesien> n;
 
  Cartesien p1(12,34);
@@ -82,10 +82,10 @@ TEST_CASE ( "TP2_Nuage::Iterateurs" ) {
 
  REQUIRE ( b3.getX() == Approx((p1.getX()+p2.getX()+p3.getX()+p4.getX())/4) );
  REQUIRE ( b3.getY() == Approx((p1.getY()+p2.getY()+p3.getY()+p4.getY())/4) );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 4a
-/*TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
+TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
  Nuage<Polaire> n;
 
  Polaire p1(12,34);
@@ -113,7 +113,7 @@ TEST_CASE ( "TP2_Nuage::Iterateurs" ) {
 
  REQUIRE ( b3.getAngle() == Approx(43.017260).epsilon(1e-3) );
  REQUIRE ( b3.getDistance() == Approx(42.159772).epsilon(1e-3) );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 4b
 /*TEST_CASE ( "TP2_Nuage::BarycentrePolaire_V1" ) {
