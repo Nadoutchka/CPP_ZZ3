@@ -1,4 +1,5 @@
 #include "nuage.hpp"
+#include <iostream>
 
 template <typename TypePoint>
 Nuage<TypePoint>::Nuage() {}
@@ -7,7 +8,7 @@ template <typename TypePoint>
 Nuage<TypePoint>::~Nuage() {}
 
 template <typename TypePoint>
-void Nuage<TypePoint>::ajouter(TypePoint p) {
+void Nuage<TypePoint>::ajouter(const TypePoint& p) {
     Vpoint.push_back(&p);
 }
 
