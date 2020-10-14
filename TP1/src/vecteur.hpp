@@ -37,13 +37,11 @@ class Vecteur {
                 void setIndex(int);
                 int operator*();
                 Iterateur& operator++();
-                //Iterateur operator++(int);
                 bool operator!=(Iterateur);
 
         };
         Vecteur::Iterateur begin();
         Vecteur::Iterateur end();
 };
-
 
 #endif

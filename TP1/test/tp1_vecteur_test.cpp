@@ -172,7 +172,3 @@ TEST_CASE("Vector::Iterateur") {
         ++i;
     }
 }
-
-bool Vecteur::Iterateur::operator!=(Vecteur::Iterateur it) {
-    return (this->getVecteur() != it.getVecteur()) || (this->getIndex() != it.getIndex());
-}

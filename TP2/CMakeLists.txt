@@ -48,7 +48,6 @@ set ( ZZ3_SOURCES
       src/cartesien.cpp
       src/point.cpp
       src/polaire.cpp
-      src/nuage.cpp
     )
 
 set ( ZZ3_HEADERS_TEST

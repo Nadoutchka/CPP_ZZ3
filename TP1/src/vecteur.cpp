@@ -130,6 +130,10 @@ Vecteur::Iterateur& Vecteur::Iterateur::operator++() {
     return *this;
 }
 
+bool Vecteur::Iterateur::operator!=(Vecteur::Iterateur it) {
+    return (this->getVecteur() != it.getVecteur()) || (this->getIndex() != it.getIndex());
+}
+
 Vecteur::Iterateur Vecteur::begin() {
     Vecteur::Iterateur it;
     it.setVecteur(*this);
