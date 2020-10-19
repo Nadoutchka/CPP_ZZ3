@@ -35,13 +35,13 @@ message ( STATUS "Compiler flags: ${CMAKE_CXX_FLAGS}" )
 # Sources #-----------------------------------------------------------------------------------------
 set ( ZZ3_HEADERS
       src/cartesien.hpp
-      #src/cosinus.hpp
-      #src/exponentielle.hpp
-      #src/factorielle.hpp
+      src/cosinus.hpp
+      src/exponentielle.hpp
+      src/factorielle.hpp
       src/nuage.hpp
       src/point.hpp
       src/polaire.hpp
-      #src/puissance.hpp
+      src/puissance.hpp
     )
 
 set ( ZZ3_SOURCES
