@@ -12,7 +12,7 @@ template <int N> class Cosinus {
             }
 };
 
-template <> struct Cosinus<0> {
+template <> class Cosinus<0> {
     public :
         static double valeur(double) {
             return 1.0;
@@ -26,10 +26,10 @@ template <int N> class Sinus {
             }
 };
 
-template <> struct Sinus<0> {
+template <> class Sinus<0> {
     public :
-        static double valeur(double) {
-            return 0.0;
+        static double valeur(double x) {
+            return x;
             }
 };
 

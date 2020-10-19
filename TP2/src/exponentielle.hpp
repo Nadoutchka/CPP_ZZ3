@@ -12,7 +12,7 @@ template <int N> class Exponentielle {
             }
 };
 
-template <> struct Exponentielle<0> {
+template <> class Exponentielle<0> {
     public :
         static double valeur(double) {
             return 1.0;

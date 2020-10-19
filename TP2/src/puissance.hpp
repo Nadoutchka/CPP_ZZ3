@@ -8,7 +8,7 @@ template <int N> class Puissance {
             }
 };
 
-template <> struct Puissance<0> {
+template <> class Puissance<0> {
     public :
         static double valeur(double) {
             return 1.0;
