@@ -19,6 +19,7 @@ class Classe {
         void setQuantite(double);
         void ajouter();
         bool operator<(const Classe&) const;
+        bool operator>(const Classe&) const;
 };
 
 /*----------------------IMPLEMENTATIONS----------------------*/
@@ -58,7 +59,23 @@ void Classe::ajouter() {
 }
 
 bool Classe::operator<(const Classe& classe) const {
-    return (this->getQuantite() > classe.getQuantite());
+    bool res;
+    if (this->getQuantite() != classe.getQuantite()) {
+        res = this->getQuantite() > classe.getQuantite();
+    } else {
+        res = this->getBorneInf() < classe.getBorneInf();
+    }
+    return res;
+}
+
+bool Classe::operator>(const Classe& classe) const {
+    bool res;
+    if (this->getQuantite() != classe.getQuantite()) {
+        res = this->getQuantite() < classe.getQuantite();
+    } else {
+        res = this->getBorneInf() > classe.getBorneInf();
+    }
+    return res;
 }
 
 #endif

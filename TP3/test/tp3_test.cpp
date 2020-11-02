@@ -6,8 +6,8 @@
 #include <histogramme.hpp>
 //#include <comparateur_quantite.hpp>
 
-typedef Histogramme Histo;
-//typedef Histogramme<> Histo;
+//typedef Histogramme Histo;
+typedef Histogramme<> Histo;
 
 // Tests //-----------------------------------------------------------------------------------------
 
@@ -186,7 +186,7 @@ TEST_CASE ( "TP3_Histogramme::Constructeur" ) {
 }
 
 //----------------------------------------------------------------------------------------------- 13
-TEST_CASE ( "TP3_Histogramme::Echantillon" ) {
+/*TEST_CASE ( "TP3_Histogramme::Echantillon" ) {
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
  double n[] = { 3, 2, 2, 0, 3 };
 
@@ -206,10 +206,10 @@ TEST_CASE ( "TP3_Histogramme::Echantillon" ) {
   ++it;
   ++i;
  }
-}
+}*/
 
 //----------------------------------------------------------------------------------------------- 14
-/*TEST_CASE ( "TP3_Histogramme::Generique" ) {
+TEST_CASE ( "TP3_Histogramme::Generique" ) {
  typedef Histogramme<> histo_t;
 
  histo_t h(5.0,15.0,5);
@@ -229,10 +229,10 @@ TEST_CASE ( "TP3_Histogramme::Echantillon" ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 15
-/*TEST_CASE ( "TP3_Histogramme::FoncteurGreater" ) {
+TEST_CASE ( "TP3_Histogramme::FoncteurGreater" ) {
  typedef Histogramme< std::greater<Classe> > histo_t;
 
  histo_t h(5.0,15.0,5);
@@ -252,10 +252,10 @@ TEST_CASE ( "TP3_Histogramme::Echantillon" ) {
   REQUIRE ( it->getQuantite() == 0u );
   ++it;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 16
-/*TEST_CASE ( "TP3_Histogramme::ComparateurQuantite" ) {
+TEST_CASE ( "TP3_Histogramme::ComparateurQuantite" ) {
  typedef Histogramme< ComparateurQuantite<Classe> > histo_t;
 
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
@@ -280,7 +280,7 @@ TEST_CASE ( "TP3_Histogramme::Echantillon" ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //------------------------------------------------------------------------------------------------17
 /*TEST_CASE ( "TP3_Histogramme::Conversion" ) {
