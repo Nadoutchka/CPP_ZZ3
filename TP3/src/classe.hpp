@@ -59,23 +59,11 @@ void Classe::ajouter() {
 }
 
 bool Classe::operator<(const Classe& classe) const {
-    bool res;
-    if (this->getQuantite() != classe.getQuantite()) {
-        res = this->getQuantite() > classe.getQuantite();
-    } else {
-        res = this->getBorneInf() < classe.getBorneInf();
-    }
-    return res;
+    return this->getBorneInf() < classe.getBorneInf();
 }
 
 bool Classe::operator>(const Classe& classe) const {
-    bool res;
-    if (this->getQuantite() != classe.getQuantite()) {
-        res = this->getQuantite() < classe.getQuantite();
-    } else {
-        res = this->getBorneInf() > classe.getBorneInf();
-    }
-    return res;
+    return this->getBorneInf() > classe.getBorneInf();
 }
 
 #endif

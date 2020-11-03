@@ -33,7 +33,7 @@ template <typename C>
 class ComparateurQuantite {
     public:
         bool operator () (const C &a, const C & b) const {
-            return (a < b);
+            return (a.getQuantite() != b.getQuantite() ? a.getQuantite() > b.getQuantite() : a < b);
             }
 };
 
