@@ -2,6 +2,7 @@
 #define HISTOGRAMME_HPP
 
 #include <set>
+#include <map>
 #include "classe.hpp"
 #include "echantillon.hpp"
 
@@ -13,13 +14,16 @@ template <typename Comparateur = std::less<Classe>>
 class Histogramme {
     private :
         std::set<Classe, Comparateur> _classes;
+        //std::multimap<Classe, Valeur> _associations;
     public :
         typedef std::set<Classe, Comparateur> classes_t;
 
         Histogramme();
+        template <typename Comparateur2>
+        Histogramme(const Histogramme<Comparateur2>&);
         Histogramme(double, double, int);
         ~Histogramme();
-        classes_t& getClasses();
+        const classes_t& getClasses() const;
         void ajouter(Echantillon);
         void ajouter(double);
 
@@ -50,10 +54,18 @@ Histogramme<Comparateur>::Histogramme(double borneInf, double borneSup, int nbCl
 }
 
 template <typename Comparateur>
+template <typename Comparateur2>
+Histogramme<Comparateur>::Histogramme(const Histogramme<Comparateur2> &h) {
+    for(auto &it : h.getClasses()) {
+        _classes.insert(it);
+    }
+}
+
+template <typename Comparateur>
 Histogramme<Comparateur>::~Histogramme() {}
 
 template <typename Comparateur>
-typename Histogramme<Comparateur>::classes_t& Histogramme<Comparateur>::getClasses() {
+const typename Histogramme<Comparateur>::classes_t& Histogramme<Comparateur>::getClasses() const{
     return _classes;
 }
 

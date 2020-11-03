@@ -17,6 +17,7 @@ class Echantillon {
         ~Echantillon();
         unsigned int getTaille();
         void ajouter(double);
+        void ajouter(double, std::string);
         Valeur getMinimum();
         Valeur getMaximum();
         Valeur getValeur(unsigned int);
@@ -33,7 +34,12 @@ unsigned int Echantillon::getTaille() {
 }
 
 void Echantillon::ajouter(double nb) {
-    Valeur v = Valeur(nb);
+    Valeur v = Valeur(nb, "inconnu");
+    _valeurs.push_back(v);
+}
+
+void Echantillon::ajouter(double nb, std::string etudiant) {
+    Valeur v = Valeur(nb, etudiant);
     _valeurs.push_back(v);
 }
 

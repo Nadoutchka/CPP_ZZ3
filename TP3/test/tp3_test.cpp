@@ -283,7 +283,7 @@ TEST_CASE ( "TP3_Histogramme::ComparateurQuantite" ) {
 }
 
 //------------------------------------------------------------------------------------------------17
-/*TEST_CASE ( "TP3_Histogramme::Conversion" ) {
+TEST_CASE ( "TP3_Histogramme::Conversion" ) {
  typedef Histogramme< std::greater<Classe> >        histo1_t;
  typedef Histogramme< ComparateurQuantite<Classe> > histo2_t;
 
@@ -309,10 +309,10 @@ TEST_CASE ( "TP3_Histogramme::ComparateurQuantite" ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 18
-/*TEST_CASE ( "TP3_Etudiant::Constructeur" ) {
+TEST_CASE ( "TP3_Etudiant::Constructeur" ) {
  const double a = 12.0;
  const char * n = "Machin";
 
@@ -322,19 +322,19 @@ TEST_CASE ( "TP3_Histogramme::ComparateurQuantite" ) {
  REQUIRE ( v.getNote() == Approx(a) );
  REQUIRE ( v.getEtudiant().c_str() != 0);
  REQUIRE ( v.getEtudiant() == n );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 19
-/*TEST_CASE ( "TP3_Etudiant::ConstructeurDefaut" ) {
+TEST_CASE ( "TP3_Etudiant::ConstructeurDefaut" ) {
  Valeur v;
 
  REQUIRE ( v.getNombre() == Approx(0.0) );
  REQUIRE ( v.getNote() == Approx(0.0) );
  REQUIRE ( v.getEtudiant() == "inconnu" );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 20
-/*TEST_CASE ( "TP3_Etudiant::Accesseurs" ) {
+TEST_CASE ( "TP3_Etudiant::Accesseurs" ) {
  const double a = 12.0;
  const char * n = "Machin";
 
@@ -346,16 +346,16 @@ TEST_CASE ( "TP3_Histogramme::ComparateurQuantite" ) {
  REQUIRE ( v.getNombre() == Approx(a) );
  REQUIRE ( v.getNote() == Approx(a) );
  REQUIRE ( v.getEtudiant() == n );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 21
-/*TEST_CASE ( "TP3_Etudiant::AccesseursConstants" ) {
+TEST_CASE ( "TP3_Etudiant::AccesseursConstants" ) {
  const Valeur v;
 
  REQUIRE ( v.getNombre() == Approx(0.0) );
  REQUIRE ( v.getNote() == Approx(0.0) );
  REQUIRE ( v.getEtudiant() == "inconnu" );
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 22
 /*TEST_CASE ( "TP3_Valeurs::Association" ) {
