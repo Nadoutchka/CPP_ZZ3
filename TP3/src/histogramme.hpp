@@ -33,8 +33,10 @@ class Histogramme {
         const interval_t getValeurs(const Classe&) const;
         void ajouter(Echantillon);
         void ajouter(double);
-        Histogramme<Comparateur> operator<<(const Histogramme<Comparateur>&) const;
 };
+
+template <typename Comparateur>
+std::ostream& operator<<(std::ostream&, const Histogramme<Comparateur>&);
 
 /*----------------------IMPLEMENTATIONS----------------------*/
 
@@ -61,7 +63,6 @@ Histogramme<Comparateur>::Histogramme(const Histogramme<Comparateur2> &h) {
     for(auto &it : h.getValeurs()) {
         _valeurs.insert(it);
     }
-    std::cout << *this;
 }
 
 template <typename Comparateur>
@@ -98,6 +99,7 @@ void Histogramme<Comparateur>::ajouter(Echantillon e) {
             }            
         }
     }
+    std::cout << (*this);
 }
 
 template <typename Comparateur>
@@ -119,7 +121,7 @@ std::ostream& operator<<(std::ostream& os, const Histogramme<Comparateur> &h)
             } else {
                 os << "\t\t" << itv->second.getEtudiant() << " - " << itv->second.getNote() << std::endl;
             }
-            }
+        }
     }
     return os;
 }
