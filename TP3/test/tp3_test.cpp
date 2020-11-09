@@ -358,7 +358,7 @@ TEST_CASE ( "TP3_Etudiant::AccesseursConstants" ) {
 }
 
 //----------------------------------------------------------------------------------------------- 22
-/*TEST_CASE ( "TP3_Valeurs::Association" ) {
+TEST_CASE ( "TP3_Valeurs::Association" ) {
  typedef Histogramme<> histo_t;
 
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
@@ -387,10 +387,10 @@ TEST_CASE ( "TP3_Etudiant::AccesseursConstants" ) {
   ++it;
   ++i;
  }
-}*/
+}
 
 //----------------------------------------------------------------------------------------------- 23
-/*TEST_CASE ( "TP3_Valeurs::Intervalle" ) {
+TEST_CASE ( "TP3_Valeurs::Intervalle" ) {
  typedef Histogramme<> histo_t;
 
  double v[] = { 7.0, 9.0, 8.0, 5.0, 10.0, 14.0, 13.0, 6.0, 5.5, 13.5 };
@@ -414,6 +414,6 @@ TEST_CASE ( "TP3_Etudiant::AccesseursConstants" ) {
   ++i;
   ++it;
  }
-}*/
+}
 
 // Fin //-------------------------------------------------------------------------------------------
