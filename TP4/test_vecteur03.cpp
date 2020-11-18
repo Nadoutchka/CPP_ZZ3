@@ -1,6 +1,7 @@
 // Entetes //---------------------------------------------------------------------------------------
 #include <algorithm>
 #include <deque>
+#include <functional>
 #include "vecteur03.hpp"
 
 // Fonction principale //---------------------------------------------------------------------------
@@ -10,8 +11,20 @@ int main(void) {
 
  complexe_t::stats();
 
- for (unsigned i = 0; i<v1.getTaille(); ++i) v1[i]=complexe_t(10*i,i*i);
- for (unsigned i = 0; i<v2.getTaille(); ++i) v2[i]=complexe_t(i,i+1);
+ //for (unsigned i = 0; i<v1.getTaille(); ++i) v1[i]=complexe_t(10*i,i*i);
+ //for (unsigned i = 0; i<v2.getTaille(); ++i) v2[i]=complexe_t(i,i+1);
+
+ unsigned int i = 0;
+ for (auto & it : v1) {
+     it=complexe_t(10*i,i*i);
+     i++;
+ }
+
+ unsigned int j = 0;
+ for (auto & it : v2) {
+     it=complexe_t(j,j+1);
+     j++;
+ }
 
  std::cout << std::endl << "v1 = " << v1 << std::endl;
  std::cout << "v2 = " << v2 << std::endl;
@@ -38,17 +51,32 @@ int main(void) {
 
  std::deque<complexe_t> liste;
 
- for (unsigned i = 0; i<v5.getTaille(); ++i) liste.push_back(v5[i]);
+ //for (unsigned i = 0; i<v5.getTaille(); ++i) liste.push_back(v5[i]);
+
+ for (auto & it : v5) liste.push_back(it);
 
  std::cout << std::endl << "liste = v5" << std::endl;
  complexe_t::stats();
 
- std::sort(liste.begin(),liste.end(),ComparateurComplexe());
+ //std::sort(liste.begin(),liste.end(),ComparateurComplexe());
+
+ std::sort(liste.begin(),liste.end(), [] (complexe_t a,complexe_t b) {
+     return a.reel<b.reel || (a.reel==b.reel && a.imaginaire<b.imaginaire);
+    });
+    
+ std::cout << std::endl;
+ //for (unsigned i = 0; i<liste.size(); ++i) std::cout << liste[i] << " ";
+ 
+ for (auto & it : liste) std::cout << it << " ";
 
  std::cout << std::endl;
- for (unsigned i = 0; i<liste.size(); ++i) std::cout << liste[i] << " ";
- std::cout << std::endl;
  complexe_t::stats();
+
+ //std::cout << std::endl << "Tests additionnels : fonction générique comme opérateur" << v5 << std::endl;
+ //Vecteur v6 = operateurBinaire(void (*operator+), v1, v2);
+ //std::cout << "v6 = v1 + v2" << std::endl;
+ //std::cout << "v6 = " << v6 << std::endl;
 }
+
 
 // Fin //-------------------------------------------------------------------------------------------

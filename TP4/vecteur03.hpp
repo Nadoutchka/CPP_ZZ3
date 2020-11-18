@@ -36,6 +36,9 @@ class Vecteur {
    for (unsigned i = 0; i<taille_; ++i) tableau_[i]=v[i];
   }
 
+  //------------------------------------------------------------------------------Constructeur mouv
+  Vecteur(Vecteur && v) : taille_(std::move(v.getTaille())), tableau_(new complexe_t[std::move(v.getTaille())]) {}
+
   //-------------------------------------------------------------------------------------Destructeur
   ~Vecteur(void) { if (tableau_) delete [] tableau_; }
 
@@ -47,6 +50,23 @@ class Vecteur {
    }
 
    return *this;
+  }
+
+  //--------------------------------------------------------------------------------Affectation mouv
+  Vecteur & operator=(Vecteur && v) {
+    taille_ = std::move(v.getTaille());
+    for (unsigned i = 0; i<taille_; ++i) tableau_[i] = std::move(v[i]);
+    return *this;
+  }
+
+  // Begin et End //--------------------------------------------------------------------------
+
+  complexe_t * begin() {
+    return tableau_;
+  }
+
+  complexe_t * end() {
+  return tableau_ + taille_;
   }
 };
 
@@ -75,6 +95,21 @@ inline Vecteur operator*(const Vecteur & v1,const Vecteur & v2) {
 
  return v;
 }
+
+//---------------------------------------------------------------------------------operateur binaire
+//template<typename OperateurType>
+//inline Vecteur operateurBinaire(OperateurType operateur, const Vecteur & v1,const Vecteur & v2) {
+// Vecteur v;
+// for (unsigned i = 0; i<v1.getTaille(); ++i) v[i]= operateur(v1[i], v2[i]);
+// return v;
+//}
+
+//template<>
+//inline Vecteur operateurBinaire(OperateurType operateur, const Vecteur & v1,const Vecteur & v2) {
+// Vecteur v;
+// for (unsigned i = 0; i<v1.getTaille(); ++i) v[i]= operateur(v1[i], v2[i]);
+// return v;
+//}
 
 // Fin //-------------------------------------------------------------------------------------------
 #endif
