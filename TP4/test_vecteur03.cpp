@@ -72,10 +72,17 @@ int main(void) {
  std::cout << std::endl;
  complexe_t::stats();
 
- //std::cout << std::endl << "Tests additionnels : fonction générique comme opérateur" << v5 << std::endl;
- //Vecteur v6 = operateurBinaire(void (*operator+), v1, v2);
- //std::cout << "v6 = v1 + v2" << std::endl;
- //std::cout << "v6 = " << v6 << std::endl;
+
+ std::cout << std::endl << "Tests question 5 : fonction generique comme operateur" << v5 << std::endl;
+ std::cout << "v6 = v1 + v2" << std::endl;
+ Vecteur v6 = operateurBinaire([] (const complexe_t &a, const complexe_t &b) {return a+b;}, v1, v2);
+ std::cout << "v6 = " << v6 << std::endl;
+ std::cout << "v7 = v4 - v1" << std::endl;
+ Vecteur v7 = operateurBinaire(Soustraction(), v4, v1);
+ std::cout << "v7 = " << v7 << std::endl;
+ std::cout << "v8 = v1 * v2" << std::endl;
+ Vecteur v8 = operateurBinaire(multiplication, v1, v2);
+ std::cout << "v8 = " << v8 << std::endl;
 }
 
 

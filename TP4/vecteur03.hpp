@@ -89,20 +89,19 @@ inline Vecteur operator+(const Vecteur & v1,const Vecteur & v2) {
 
 //-----------------------------------------------------------------------------------------operator*
 inline Vecteur operator*(const Vecteur & v1,const Vecteur & v2) {
- Vecteur v;
-
- for (unsigned i = 0; i<v1.getTaille(); ++i) v[i]=v1[i]*v2[i];
-
- return v;
+  Vecteur v;
+  for (unsigned i = 0; i<v1.getTaille(); ++i) v[i]=v1[i]*v2[i];
+  return v;
 }
 
 //---------------------------------------------------------------------------------operateur binaire
-//template<typename OperateurType>
-//inline Vecteur operateurBinaire(OperateurType operateur, const Vecteur & v1,const Vecteur & v2) {
-// Vecteur v;
-// for (unsigned i = 0; i<v1.getTaille(); ++i) v[i]= operateur(v1[i], v2[i]);
-// return v;
-//}
+template<typename OperateurType>
+inline Vecteur operateurBinaire(OperateurType operateur, const Vecteur & v1,const Vecteur & v2) {
+  Vecteur v;
+  for (unsigned i = 0; i<v1.getTaille(); ++i) v[i]= operateur(v1[i], v2[i]);
+  return v;
+}
+
 
 //template<>
 //inline Vecteur operateurBinaire(OperateurType operateur, const Vecteur & v1,const Vecteur & v2) {

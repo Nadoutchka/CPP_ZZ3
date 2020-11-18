@@ -44,5 +44,22 @@ struct ComparateurComplexe {
  }
 };
 
+// Fonction et foncteur pour test question 5 //-------------------------------------------------
+
+//------------------------------------------------------------------------------foncteur_soustraction
+class Soustraction {
+    public :
+        complexe_t operator()(const complexe_t & a,const complexe_t & b) {
+            return complexe_t(a.reel-b.reel,a.imaginaire-b.imaginaire);
+        }
+};
+
+//----------------------------------------------------------------------------fonction_multiplication
+complexe_t multiplication(const complexe_t & a,const complexe_t & b) {
+    return complexe_t(a.reel*b.reel-a.imaginaire*b.imaginaire,
+                      a.reel*b.imaginaire+a.imaginaire*b.reel);
+}
+
+
 // Fin //-------------------------------------------------------------------------------------------
 #endif
